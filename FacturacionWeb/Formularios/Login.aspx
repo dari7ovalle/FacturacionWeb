@@ -4,10 +4,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Login | HandlingQuotas</title>
+    <title>Login</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-3">
                 <div class="account-wall">
                     <img class="profile-img" src="img/avatar_2x.png" alt=""/>
                     <form class="form-signin" id="form1" runat="server">
