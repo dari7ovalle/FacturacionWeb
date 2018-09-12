@@ -22,7 +22,7 @@
                     <form class="form-signin" id="form1" runat="server">
                         <asp:TextBox ID="UserNameTextBox" CssClass="form-control" placeholder="Username" required="required"  autofocus="autofocus" runat="server"></asp:TextBox>
                         <asp:TextBox ID="PasswordTextBox" CssClass="form-control" placeholder="Password" required="required" runat="server" TextMode="password"></asp:TextBox><br />
-                        <asp:Button ID="IniciarSesionButton" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Sign in"  />
+                        <asp:Button ID="IniciarSesionButton" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Sign in" OnClick="IniciarSesionButton_Click"  />
                         <label class="checkbox pull-left">
                             <asp:CheckBox ID="RememberCheckBox" runat="server" />Remember me
                         </label>

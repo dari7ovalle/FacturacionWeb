@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SisAgroVeterinaria.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,23 @@ namespace FacturacionWeb.Formularios
         {
 
         }
+
+        protected void IniciarSesionButton_Click(object sender, EventArgs e)
+        {
+
+            if (UsuariosBLL.Login(UserNameTextBox.Text, PasswordTextBox.Text))
+            {
+                
+                Response.Write("<script>alert('Inicio sesion ');</script>");
+                Response.Redirect("\\");
+            }
+            else
+            {
+                Response.Write("<script>alert('no Inicio sesion ');</script>");
+                // MessageBox.Show("Error");
+            }
+        }
+
+
     }
-}
+    }

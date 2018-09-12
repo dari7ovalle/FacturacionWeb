@@ -1,35 +1,69 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="rUsuario.aspx.cs" Inherits="FacturacionWeb.Formularios.rUsuario" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Kodinger">
+    <title>Registro</title>
+    <link href="../Css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../js/bootstrap.min.js"></script>
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div style="width: 231px">
-            ID<br />
-            <asp:TextBox ID="UsuarioIdTextBox" runat="server"></asp:TextBox>
-            <br />
-            Nombres<br />
-            <asp:TextBox ID="NombresTextBox" runat="server" Width="192px"></asp:TextBox>
-            <br />
-            Contracena<br />
-            <asp:TextBox ID="ContracenaTextBox" runat="server" Width="180px"></asp:TextBox>
-            <br />
-            TipoUsuario<br />
-            <asp:TextBox ID="TextBox1" runat="server" Width="178px"></asp:TextBox>
-            <br />
-            <br />
-            <br />
-            <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" />
-&nbsp;
-            <asp:Button ID="GuardarButton" runat="server" OnClick="Button2_Click" Text="Guardar" />
-&nbsp;&nbsp;
-            <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" />
+<body class="my-login-page">
+   
+        <div class="container ">
+            <div class="row cmd-8">
+                <div class="card-wrapper">
+                    <div class="brand">
+                        <img src="img/logo.jpg">
+                    </div>
+                    <div class="card fat">
+                        <div class="card-body">
+                            <h4 class="card-title">Register</h4>
+                            <form method="POST"  runat="server">
+
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <asp:TextBox ID="nameTextbox" runat="server" class="form-control" name="name" required autofocus></asp:TextBox>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <asp:TextBox ID="PasswordTextBox" runat="server" class="form-control" name="name" type="password" required autofocus></asp:TextBox>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <asp:CheckBox ID="ValidarCheckBox" runat="server" />
+                                        I agree to the Terms and Conditions
+								
+                                    </label>
+                                </div>
+
+                                <div class="form-group no-margin">
+
+                                    <asp:Button ID="RegistrarButton" runat="server" Text="REGISTRAR" class="btn btn-primary btn-block" OnClick="RegistrarButton_Click" />
+                                    Register
+								
+                                  
+                                </div>
+                                <div class="margin-top20 text-center">
+                                    Already have an account? <a href="index.html">Login</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        Copyright &copy; Your Company 2017
+				
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
+ 
+
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/my-login.js"></script>
 </body>
 </html>

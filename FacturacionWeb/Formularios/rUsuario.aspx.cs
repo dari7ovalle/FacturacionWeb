@@ -16,49 +16,52 @@ namespace FacturacionWeb.Formularios
         {
 
             Usuarios usuario = new Usuarios();
-            usuario.Nombres = NombresTextBox.Text;
-            usuario.Contracena = ContracenaTextBox.Text;
+            usuario.Nombres = nameTextbox.Text;
+            usuario.Contracena = PasswordTextBox.Text;
             usuario.TipoUsuario = 0;
             return usuario;
 
 
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void RegistrarButton_Click(object sender, EventArgs e)
         {
-            if (UsuarioIdTextBox.Text.Length == 0)
+
+            if (nameTextbox.Text.Length > 0 && ValidarCheckBox.Checked)
             {
                 if (UsuariosBLL.Guardar(llenarClase()))
                 {
+                    Response.Redirect("/Formularios/Login.aspx");
                     Response.Write("<script>alert('Guardado Correctamente');</script>");
-
-                    //MessageBox.Show("Guardado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // MessageBox.Show("Guardado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    Response.Write("<script>alert('Error al Guardar Error');</script>");
+                    Response.Write("<script>alert('Error al Guardar');</script>");
                     // MessageBox.Show("Error al Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
+            }else
             {
-                if (UsuariosBLL.Editar(llenarClase()))
-                {
-                    Response.Write("<script>alert('Modificado correctamente');</script>");
-
-                    //   MessageBox.Show("Modificado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    Response.Write("<script>alert('Error al Modificar');</script>");
-
-                    //  MessageBox.Show("Error al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Response.Write("<script>alert('favor acepte las condiciones para continuar ');</script>");
             }
+            //else
+            //{
+            //    if (UsuariosBLL.Editar(llenarClase()))
+            //    {
+            //        Response.Write("<script>alert('Modificado Correctamente');</script>");
+            //        // MessageBox.Show("Modificado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    else
+            //    {
+            //        Response.Write("<script>alert('Error al Modificar');</script>");
+            //        //  MessageBox.Show("Error al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
 
         }
     }
