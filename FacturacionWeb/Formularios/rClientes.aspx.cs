@@ -41,8 +41,7 @@ namespace FacturacionWeb.Formularios
             cliente.Celular = CelularTextBox.Text;
             cliente.Direccion = DireccionTextBox.Text;
             cliente.Telefono = TelefonoTextBox.Text;
-            int id = 0;
-            int.TryParse(ClienteTextBox.Text, out id);
+           b
             cliente.ClienteId = id;
             cliente.CiudadId = int.Parse(CiudadesIdDropDownList.SelectedValue.ToString());
 
